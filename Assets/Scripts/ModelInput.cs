@@ -73,8 +73,21 @@ public class ModelInput : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 // Get a reference to the LerpInfo script in each piece
-                LerpInfo lerp = hit.transform.GetComponent<LerpInfo>();                    
-                hit.transform.localPosition = Vector3.Lerp(new Vector3(-lerp.xDistance, lerp.yDistance, 0), Vector3.forward, interpolationRatio);
+                LerpInfo lerp = hit.transform.GetComponent<LerpInfo>();
+
+                // If the particular piece that's been clicked on hasn't been moved yet then move it and set the status to true
+                if (lerp.MoveStatus() == false) 
+                {
+                    hit.transform.localPosition = Vector3.Lerp(new Vector3(-lerp.xDistance, lerp.yDistance, 0), Vector3.forward, interpolationRatio);
+                    lerp.SetMoveStatus();
+                }                    
+
+                // If the piece has been moved then set it back to its original position and set the move status to false
+                else if (lerp.MoveStatus() == true) 
+                {
+                    hit.transform.localPosition = Vector3.Lerp(new Vector3(0, 0, 0), Vector3.forward, interpolationRatio);
+                    lerp.SetMoveStatus();
+                }       
 
             }
         }
