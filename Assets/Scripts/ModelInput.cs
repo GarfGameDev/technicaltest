@@ -74,7 +74,7 @@ public class ModelInput : MonoBehaviour
             {
                 // Get a reference to the LerpInfo script in each piece
                 LerpInfo lerp = hit.transform.GetComponent<LerpInfo>();                    
-                hit.transform.localPosition = Vector3.Lerp(new Vector3(-lerp.distance, 0, 0), Vector3.forward, interpolationRatio);
+                hit.transform.localPosition = Vector3.Lerp(new Vector3(-lerp.xDistance, lerp.yDistance, 0), Vector3.forward, interpolationRatio);
 
             }
         }

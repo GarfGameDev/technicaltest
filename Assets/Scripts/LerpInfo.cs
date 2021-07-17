@@ -5,5 +5,6 @@ using UnityEngine;
 public class LerpInfo : MonoBehaviour
 {
     // Specify the distance each piece will move so that we can see them all separated
-    public float distance;
+    public float xDistance;
+    public float yDistance;
 }
