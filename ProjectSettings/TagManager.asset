@@ -3,7 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Bolt
+  - Lid
+  - Ring
+  - Nut
+  - Glove Finger
+  - Plate
+  - Glove Finger (No Ring)
+  - Piston
+  - Connector
+  - Hub
+  - Cog
+  - Washer
   layers:
   - Default
   - TransparentFX
